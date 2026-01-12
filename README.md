@@ -160,7 +160,7 @@ For Steps 2 and 3, Quantization-Aware Training (QAT) was chosen due to:
 *Manually implemented. Need verifications.
 
 **Didn't use gradient accumulation. Results could be improved.
-![Alt Text](plots/Screenshot 2026-01-13 at 2.45.11 AM.png)
+![Alt Text][plots/Screenshot 2026-01-13 at 2.45.11 AM.png](https://github.com/sharif-apu/nota_ta_260111/blob/main/plots/Screenshot%202026-01-13%20at%202.45.34%E2%80%AFAM.png)
 
 **To produce PTQ results:**
 ```bash
@@ -176,7 +176,9 @@ python ta1_step2_qat.py
 
 ### Step 3: Mixed Precision Quantization
 
-To perform mixed-precision (INT) QAT, we first analyzed lm_head/embedding impact on the network. It was found that lm_head/embedding only affects 0.70% accuracy drop while providing significant compression. Such results provide a clear indication to compress the model further.
+To perform mixed-precision (INT) QAT, we first analyzed lm_head/embedding impact on the network. It was found that lm_head/embedding only affects 0.70% accuracy drop while providing significant compression. Such results provide a clear indication to further compress the model.
+![Alt Text](https://github.com/sharif-apu/nota_ta_260111/blob/main/plots/lm0_summary.png)
+![Alt Text](https://github.com/sharif-apu/nota_ta_260111/blob/main/plots/lm5_output_distributions.png)
 
 **To execute lm_head-embedding quantization analysis:**
 ```bash
@@ -185,10 +187,11 @@ python ta1_step3_lmhead_analysis.py
 
 #### Strategy
 
+![Alt Text](https://github.com/sharif-apu/nota_ta_260111/blob/main/plots/mp_qat.png)
 To search for architecture and find optimal architecture, the following strategy was taken, inspired by neural architecture search algorithms:
 
 1. First, heuristically find combinations of LM head-embedding and linear layers
-2. Force best trade-off model (analyzed layer by layer) to adopt lower bit-widths
+2. Force the best trade-off model (analyzed layer by layer) to adopt lower bit-widths
 3. Train optimal architecture
 
 Layer-by-layer bit selection requires substantial compute and time. Due to time constraints, the second stage was skipped (implemented and can be found in `ta1_step3_mp_qatkd` file), and the best two architectures from stage 1 were trained. Knowledge Distillation (KD) was integrated into the pipeline; however, due to memory constraints, it was skipped.
@@ -223,6 +226,9 @@ python ta1_step3_mp_qatkd.py
 
 Default 4/8 bit quantization without KD. To turn on stage one, set `RUN_STAGE1 = True`
 
+![Alt Text](https://github.com/sharif-apu/nota_ta_260111/blob/main/plots/Screenshot%202026-01-13%20at%202.45.11%E2%80%AFAM.png)
+
+
 ---
 
 ### Step 4: Activation Quantization [W+A]
@@ -233,6 +239,9 @@ To further investigate activation quantization, a dynamic quantization approach 
 2. **Runtime quantization:** Activations are mapped to discrete integer representations
 
 While this enables efficient computation on INT8-accelerated hardware, experiments reveal that activation quantization introduces calibration and inference overhead with potential accuracy degradation, depending on bit-width, calibration quality, and symmetric versus asymmetric quantization schemes.
+
+![Alt Text](https://github.com/sharif-apu/nota_ta_260111/blob/main/plots/wa_summary_dashboard.png)
+
 
 #### Technical Challenges in LLMs
 
