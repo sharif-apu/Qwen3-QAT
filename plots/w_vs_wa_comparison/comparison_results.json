@@ -1,0 +1,60 @@
+{
+  "config": {
+    "model_id": "Qwen/Qwen3-0.6B",
+    "weight_bits": 4,
+    "weight_symmetric": false,
+    "activation_bits": 8,
+    "activation_symmetric": true,
+    "group_size": 128,
+    "eval_limit": 0.1,
+    "calibration_samples": 128
+  },
+  "experiments": [
+    {
+      "name": "Baseline (FP16)",
+      "type": "baseline",
+      "accuracy": 0.4034965034965035,
+      "accuracy_drop_%": 0.0,
+      "model_size_mb": 1433.5,
+      "compression_ratio": 1.0,
+      "avg_bits": 16.0,
+      "eval_time_seconds": 148.63031005859375
+    },
+    {
+      "name": "Weight-Only (W)",
+      "type": "weight_only",
+      "weight_bits": 4,
+      "weight_symmetric": false,
+      "activation_bits": 16,
+      "accuracy": 0.3020979020979021,
+      "accuracy_drop_%": 10.13986013986014,
+      "model_size_mb": 210.0,
+      "compression_ratio": 4.0,
+      "avg_bits": 4.0,
+      "quantization_time_seconds": 0.05140113830566406,
+      "eval_time_seconds": 135.4829330444336
+    },
+    {
+      "name": "Weight + Activation (W+A)",
+      "type": "weight_activation",
+      "weight_bits": 4,
+      "weight_symmetric": false,
+      "activation_bits": 8,
+      "activation_symmetric": true,
+      "accuracy": 0.24965034965034966,
+      "accuracy_drop_%": 15.384615384615385,
+      "model_size_mb": 210.0,
+      "compression_ratio": 4.0,
+      "avg_bits": 4.0,
+      "quantization_time_seconds": 66.22376155853271,
+      "calibration_samples": 128,
+      "eval_time_seconds": 181.19937753677368
+    }
+  ],
+  "comparison": {
+    "accuracy_difference_%": 5.244755244755245,
+    "eval_time_overhead_%": 33.74332357961776,
+    "quantization_time_overhead_%": 128737.14980147686,
+    "model_size_same": true
+  }
+}
