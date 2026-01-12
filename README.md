@@ -271,6 +271,14 @@ Deploying quantized models to edge hardware requires hardware-aware conversions 
 
 End-to-end toolchains like Torch-TensorRT streamline this process.
 
+As an investigation into exporting of Qwen3-0.6B, an export function (to ONNX) has been developed to run it. Please execute the following command:
+
+```bash
+python eval_export.py --checkpoint /path/to/checkpoint --export_onnx
+```
+
+This script can also be used to evaluate trained weights. [Click Here](https://drive.google.com/drive/folders/1M_uPIZ2ka-aGHN_ED8kRK0zbroYVpEAk?usp=sharing) to download the checkpoint.
+
 The deployment pipeline involves four critical steps:
 
 #### 1. Exporting:
@@ -346,7 +354,7 @@ For practical edge deployment:
 
 ✅ Profile layer-wise execution to prune or replace computationally expensive operations
 
-✅ Benchmark end-to-end latency including dequantization costs rather than relying on theoretical compression ratios
+✅ Benchmark end-to-end latency, including dequantization costs rather than relying on theoretical compression ratios
 
 ---
 
