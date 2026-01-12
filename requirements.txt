@@ -1,0 +1,19 @@
+# PyTorch with CUDA 12.1 support
+--extra-index-url https://download.pytorch.org/whl/cu121
+torch
+torchvision
+torchaudio
+
+# Transformers (from git)
+git+https://github.com/huggingface/transformers.git
+
+# LM Evaluation Harness (from git)
+git+https://github.com/EleutherAI/lm-evaluation-harness.git
+
+# Additional dependencies
+matplotlib
+pyyaml
+seaborn
+onnx
+accelerate
+tensorboard
