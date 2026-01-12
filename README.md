@@ -91,7 +91,7 @@ python ta1_step0_model_analysis.py
 
 #### Model Configuration Analysis
 
-![Alt Text][summary_dashboard](https://github.com/sharif-apu/nota_ta_260111/blob/main/plots/summary_dashboard.png))
+![Alt Text][summary_dashboard](https://github.com/sharif-apu/nota_ta_260111/blob/main/plots/summary_dashboard.png)
 
 | Config | Emb | LM Head | Linear | Total (MB) | Core (MB) | Total Comp | Total Red% | Core Comp | Core Red% |
 |--------|-----|---------|--------|------------|-----------|------------|------------|-----------|-----------|
@@ -185,7 +185,7 @@ python ta1_step3_lmhead_analysis.py
 
 #### Strategy
 
-To search architecture and find optimal architecture, the following strategy was taken, inspired by neural architecture search algorithms:
+To search for architecture and find optimal architecture, the following strategy was taken, inspired by neural architecture search algorithms:
 
 1. First, heuristically find combinations of LM head-embedding and linear layers
 2. Force best trade-off model (analyzed layer by layer) to adopt lower bit-widths
