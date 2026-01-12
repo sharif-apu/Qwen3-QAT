@@ -91,6 +91,8 @@ python ta1_step0_model_analysis.py
 
 #### Model Configuration Analysis
 
+![Alt Text][summary_dashboard](https://github.com/sharif-apu/nota_ta_260111/blob/main/plots/summary_dashboard.png))
+
 | Config | Emb | LM Head | Linear | Total (MB) | Core (MB) | Total Comp | Total Red% | Core Comp | Core Red% |
 |--------|-----|---------|--------|------------|-----------|------------|------------|-----------|-----------|
 | baseline_fp16 | FP16 | FP16 | FP16 | 1433.62 | 840.12 | 1.00× | 0.0% | 1.00× | 0.0% |
