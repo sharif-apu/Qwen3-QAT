@@ -91,7 +91,7 @@ python ta1_step0_model_analysis.py
 
 #### Model Configuration Analysis
 
-![Alt Text][summary_dashboard](https://github.com/sharif-apu/nota_ta_260111/blob/main/plots/summary_dashboard.png)
+![Alt Text](https://github.com/sharif-apu/nota_ta_260111/blob/main/plots/summary_dashboard.png)
 
 | Config | Emb | LM Head | Linear | Total (MB) | Core (MB) | Total Comp | Total Red% | Core Comp | Core Red% |
 |--------|-----|---------|--------|------------|-----------|------------|------------|-----------|-----------|
@@ -160,7 +160,7 @@ For Steps 2 and 3, Quantization-Aware Training (QAT) was chosen due to:
 *Manually implemented. Need verifications.
 
 **Didn't use gradient accumulation. Results could be improved.
-![Alt Text][plots/Screenshot 2026-01-13 at 2.45.11 AM.png](https://github.com/sharif-apu/nota_ta_260111/blob/main/plots/Screenshot%202026-01-13%20at%202.45.34%E2%80%AFAM.png)
+![Alt Text](https://github.com/sharif-apu/nota_ta_260111/blob/main/plots/Screenshot%202026-01-13%20at%202.45.34%E2%80%AFAM.png)
 
 **To produce PTQ results:**
 ```bash
