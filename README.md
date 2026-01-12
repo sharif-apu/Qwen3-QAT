@@ -228,6 +228,9 @@ python ta1_step3_mp_qatkd.py
 
 Default 4/8 bit quantization without KD. To turn on stage one, set `RUN_STAGE1 = True`
 
+
+Distributions of lm head/ embedding/linear layers during training<img width="468" height="13" alt="image" src="https://github.com/user-attachments/assets/499eaa1a-4697-4d48-b4ea-5ebac1e344b8" />
+
 ![Alt Text](https://github.com/sharif-apu/nota_ta_260111/blob/main/plots/Screenshot%202026-01-13%20at%202.45.11%E2%80%AFAM.png)
 
 
