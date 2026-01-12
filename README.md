@@ -4,7 +4,8 @@
 
 The Qwen/Qwen3-0.6B model has been compressed up to **75% (358.45 MB)** with 4-bit quantization. The quantization error has been successfully recovered with quantization-aware training (QAT), achieving **0.4154 MMLU score**, surpassing the baseline FP16 model (0.4036). Additionally, several PTQ methods (AWQ, RTN, NF4, GPTQ) and mixed-precision quantization techniques have been explored.
 
----
+![Alt Text]([./images/screenshot.png](https://github.com/sharif-apu/nota_ta_260111/blob/main/plots/model_compression_teaser.png
+---))
 
 ## 📋 Table of Contents
 
