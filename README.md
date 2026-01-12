@@ -142,7 +142,7 @@ python ta1_step1_baseline.py
 For Steps 2 and 3, Quantization-Aware Training (QAT) was chosen due to:
 
 1. **Proven track record:** QAT works better for quantization-sensitive small models like Qwen3-0.6B
-2. **Time management:** Small LLMs on RTX 3060 take 20-30 minutes per epoch on 3000-4000 samples. QAT typically reaches local minima within 1-10 epochs (~3-5 hours per experiment)
+2. **Time management:** Small LLMs on RTX 3060 take 20-30 minutes per epoch on 3000-4000 samples. QAT typically reaches local minima within 1-10 epochs (~3-5 hours per experiment). While QAT is in progress, it allows us to explore other options with a higher probability of providing an acceptable result.
 3. **Reliable results:** Qwen3 is relatively new; widely-used libraries (AutoGPTQ, bitsandbytes, etc.) do not provide official support and have version compatibility issues [Official Notes](https://qwen.readthedocs.io/en/latest/quantization/gptq.html). Although we could patch libraries (as Qwen3 shares many common parts with Wen2.5) or implement algorithms ourselves, results may be inconsistent due to implementation constraints. Deep debugging and testing could take more time than QAT.
 4. **Results from Step 1:** Results from Step 1 provide clear insights into which configurations (granularities) work better for the given model. These findings are directly used for static weight-only quantization
 
