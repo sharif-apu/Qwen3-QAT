@@ -8,7 +8,7 @@ ax.set_facecolor('#1e3a8a')
 
 # Data
 models = ['BF16\n(Baseline)', '4-bit', 'Mixed 4/8']
-accuracy = [0.4036, 0.4154, 0.4182]
+accuracy = [0.4035, 0.4154, 0.4182]
 colors = ['#94a3b8', '#3b82f6', '#10b981']
 
 # Create bars
@@ -20,9 +20,9 @@ for i, (bar, acc) in enumerate(zip(bars, accuracy)):
     if i == 0:
         label = f'{acc:.4f}'
     elif i == 1:
-        label = f'{acc:.4f}\n(+1.18%)'
+        label = f'{acc:.4f}\n(+2.95%)'
     else:
-        label = f'{acc:.4f}\n(+1.46%)'
+        label = f'{acc:.4f}\n(+3.64%)'
     
     ax.text(bar.get_x() + bar.get_width()/2., height + 0.001,
             label, ha='center', va='bottom', color='white', 
@@ -57,7 +57,7 @@ fig.text(0.22, metric_y - 0.05, 'Size Reduction', ha='center',
          fontsize=11, color='#d1d5db')
 
 # Accuracy Gain
-fig.text(0.5, metric_y, '+1.18%', ha='center', fontsize=26, 
+fig.text(0.5, metric_y, '+2.95%', ha='center', fontsize=26, 
          fontweight='bold', color='#60a5fa', bbox=box_props)
 fig.text(0.5, metric_y - 0.05, 'Accuracy Gain', ha='center', 
          fontsize=11, color='#d1d5db')
