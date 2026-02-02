@@ -72,8 +72,8 @@ mmlu
 | RTN | 803.5 | 43.95% | 0.3021 | -0.1014 | 4 | 16 | Best RTN |
 | NF4 | 803.5 | 43.95% | 0.3280 | -0.0755 | 4 | 16 | Best PTQ |
 | QAT (W-only) | 803.5 | 43.95% | 0.3937 | -0.0098 | 4 | 16 | Excl. lm_head/emb |
-| QAT Mixed (W4/W8) | 506.82 | 64.60% | 0.4182 | +0.0147 | 4-8 | 16 | ⭐ Best overall |
-| QAT (W4A4) | 358.45 | 75.00% | 0.4154 | +0.0119 | 4 | 4 | ⭐ Highest compression |
+| QAT Mixed (W4/LMH8) | 506.82 | 64.60% | 0.4182 | +0.0147 | 4-8 | 16 | ⭐ Best overall |
+| QAT (W4/LMH4) | 358.45 | 75.00% | 0.4154 | +0.0119 | 4 | 4 | ⭐ Highest compression |
 | RTN (W4A4) | 803.5 | 43.95% | 0.2497 | -0.1538 | 4 | 4 | With act. quant. |
 
 ---
