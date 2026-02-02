@@ -1,4 +1,4 @@
-# Technical Assignment 1: LLM Quantization & Optimization
+# Qwen3 Quantization & Optimization
 
 ## Executive Summary
 
