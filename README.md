@@ -181,6 +181,7 @@ python ta1_step2_qat.py
 To perform mixed-precision (INT) QAT, we first analyzed lm_head/embedding impact on the network. It was found that lm_head/embedding only affects 0.70% accuracy drop while providing significant compression. Such results provide a clear indication to further compress the model.
 ![Alt Text](https://github.com/sharif-apu/nota_ta_260111/blob/main/plots/lm0_summary.png)
 ![Alt Text](https://github.com/sharif-apu/nota_ta_260111/blob/main/plots/lm5_output_distributions.png)
+![Alt Text](https://github.com/sharif-apu/Qwen3-QAT/blob/main/plots/lmhead_embedding_analysis/plots/3_weight_distributions.png)
 
 **To execute lm_head-embedding quantization analysis:**
 ```bash
@@ -190,7 +191,7 @@ python ta1_step3_lmhead_analysis.py
 #### Strategy
 
 ![Alt Text](https://github.com/sharif-apu/nota_ta_260111/blob/main/plots/mp_qat.png)
-![Alt Text](https://github.com/sharif-apu/Qwen3-QAT/blob/main/plots/lmhead_embedding_analysis/plots/3_weight_distributions.png)
+
 To search for architecture and find optimal architecture, the following strategy was taken, inspired by neural architecture search algorithms:
 
 1. First, heuristically find combinations of LM head-embedding and linear layers
